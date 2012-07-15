@@ -1,0 +1,38 @@
+// Print Defaults.
+// Synopsis:
+//  sets std defaults: transparent bg, soft black text, kills
+//  shadows, no windows/orphans in text, adjusts link colors,
+//  avoids page breaks before/after headings
+print-defaults()
+  body
+    background: transparent!important
+    color: #444!important
+    font-size: 12pt
+    text-shadow: none!important
+  pre, blockquote, img
+    page-break-inside: avoid
+  p, h2, h3
+    orphans: 3
+    widows: 3
+  h2, h3
+    page-break-after: avoid
+  a, a:visited
+    color: #520!important
+    background: transparent
+    font-weight: bold
+    text-decoration: underline
+
+// Print Append.
+// Synopsis:
+//  add urls/abbreviations/amusing easter eggs to links
+//  when printed; args output inside parentheses; if none
+//  passed, defaults to href value instead
+// Example:
+//  print-append: " attr(href)"
+print-append(args)
+  &:after
+    if args
+      content: "args"
+    else
+      content: " (" attr(href) ")"
+    font-size: 90%

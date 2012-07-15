@@ -1,0 +1,38 @@
+/* =============================================================================
+   Grid
+   ========================================================================== */
+
+/*
+ * Grid container
+ * Must only contain `.gridcell` components as children.
+ */
+
+fluidgrid(nested, cols, gutter, direction = left)
+  reset-box-model()
+  display: block
+  /* Ensure consistent default alignment */
+  text-align: direction
+  /* Remove inter-unit whitespace for all non-monospace font-families
+   * If you're using a monospace base font, you will need to set the `grid`
+   * font-family to `sans-serif` and then redeclare the monospace font on
+   * the `gridcell` objects.
+   */
+  letter-spacing: -0.31em
+  word-spacing: -0.43em
+  /* Protect against WebKit bug with optimizelegibility */
+  text-rendering: optimizespeed
+
+  {nested}
+    width: unit(100/cols, '%')
+    display: inline-block
+    box-sizing: border-box
+    hmar: 0
+    hpad: 0.5 * gutter
+    /* controls vertical positioning of units */
+    vertical-align: top
+    /* keeps unit content correctly aligned */
+    text-align: direction
+    /* reset text defaults */
+    letter-spacing: normal
+    word-spacing: normal
+    text-rendering: auto

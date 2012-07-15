@@ -1,0 +1,9 @@
+quickborder(size = 1px, style = solid, args...)
+  border-width: size
+  border-style: style
+  border-color: args
+
+gridborder(size, $top = top, $left = left)
+  margin-left: -size
+  border-{top}-width: 0
+  border-{left}-width: 0

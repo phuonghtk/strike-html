@@ -1,0 +1,28 @@
+// Search Fields.
+// Synopsis:
+//  make webkit render html5 search forms as a regular
+//  text field if they've got feelin' blue
+reset-search-field()
+  -webkit-appearance: textfield
+  &::-webkit-search-decoration
+  &::-webkit-search-cancel-button
+    display: none
+
+// Number Fields.
+// Synopsis:
+//  spin boxes are fun at first but sometimes they get
+//  on your nerves. reset as regular text fields.
+reset-number-field()
+  &::-webkit-outer-spin-button
+  &::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+// noFocus (Webkit Field Highlight).
+// Synopsis:
+//  lose the :focus outline entirely; if you plan on
+//  styling it afterwards, best to add outline: none
+//  instead of using this mixin
+nofocus()
+  &:focus
+    outline: none

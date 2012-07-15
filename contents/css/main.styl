@@ -1,0 +1,165 @@
+@import 'framework'
+@import 'mixins'
+
+html
+  fz 31.25%
+
+@media all and (-webkit-min-device-pixel-ratio: 2)
+  html
+    fz 62.5%
+
+html *
+  mobile-fixed-text()
+  vertical-align: top
+
+body, div, canvas, article, button
+  image-sharpen()
+  image-speed()
+
+body
+  reset-box-model()
+  fx()
+  opacity: 1
+  font-size 12px
+  ff $helvetica
+  bg #09182d
+  color #fff
+
+  > header
+    mh 4.8rem
+    bb 1px solid #364252
+
+  > section
+    bg #0d1d34
+    mh 10rem
+
+  > footer
+    imgrep '../img/bgfoot.png'
+
+
+/***************************************************
+ *
+ * Gamepage
+ *
+ **************************************************/
+
+.gamepage
+  > header
+    imgrep '../img/header.png'
+
+  section
+
+    header
+      mh 5.15rem
+      bg #000
+      content "Banner"
+
+  .viewport
+    vbox()
+    z-index 90
+
+    .start
+      justify()
+      hbox()
+      boxcol 1
+      absolute top 6.8rem left 50%
+      radius 0.5rem
+      boxsh 0 3.5rem 1rem rgba(0,0,0,.65)
+      bg #3c3e3f
+      text-align center
+      size 8.7rem 6.85rem
+      margin 0 0 0 0-(@width/2)
+      text-shadow 0 1px 0 rgba(255,255,255,.6)
+      z-index 100
+
+      &:active
+        bg #7d2529
+        color: #2b4a6d
+        span
+          top -0.25rem
+
+      &:after
+        pseudo()
+        radius 0.5rem
+        absolute top -0.5rem left 0
+        size inherit inherit
+        z-index -10
+        background-image linear-gradient(bottom, #cbcbcb, #cbcbcb 50%, #e5e5e5 50%, #fff 100%)
+
+      span
+        vbox()
+        boxcol 1
+        fz 36px
+        relative top -0.3rem left 0
+
+    article
+      hbox()
+      boxcol 1
+      z-index 90
+
+    section
+      vbox()
+      boxcol 1
+      bgstripe #2b4a6d
+      mh 15rem
+
+      span
+        display inline-block
+        width 6rem
+
+      input[type="text"]
+        size 6.85rem 1.6rem
+        bg #1b3553
+
+      &:last-child
+        background-color #b83038
+        input
+          bg #7d2529
+
+    .header
+      min-height 12.5rem
+
+    ul
+      reset-box-model()
+      li
+        reset-box-model()
+        hbox()
+        list-style-type none
+        padding: 0.25rem 1.5rem
+        z-index: 110
+
+        li, span, a[class^="btn-"]
+          boxcol: 1
+          ff: $helvetica
+    // Experimental with button
+    for color, i in #FFB700 rgb(255,130,172) rgb(130,207,241) #e25b53 #444444 #82cc5d
+      .btn-{i}
+        //color, color diff, text color, border radius, 3d, outline
+        btnmaker: color, 10, darken(color,30)
+
+        // btnmaker: color, 10, darken(color,30), 1rem
+
+        // btnmaker: color, 10, false, 0.4rem, 0.4rem
+
+        // btnmaker: color, 10, false, 0.4rem, 0.4rem, 0.6rem
+
+        // btnmaker: color, 10, darken(color,30), 50%
+        // size: 12rem 16rem
+        // padding: 0
+
+        // btnmaker: color, 10, darken(color,30), 50%, 0.6rem
+        // size: 12rem 16rem
+        // padding: 0
+
+        // btnmaker: color, 10, darken(color,30), 50%, 0.6rem, 1rem
+        // size: 6rem 11rem
+        // padding: 0
+
+/***************************************************
+ *
+ * import info.styl, color.styl
+ *
+ **************************************************/
+
+@import 'info'
+

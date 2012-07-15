@@ -1,0 +1,39 @@
+// horizontal | vertical | inherit
+hbox()
+  display: box
+  box-orient: horizontal
+  boxalign: stretch
+  boxpack: center
+
+  > *
+    display: block
+    boxcol: 0
+
+vbox()
+  display: box
+  box-orient: vertical
+  boxalign: stretch
+  boxpack: center
+
+  > *
+    display: block
+    boxcol: 0
+
+bbox()
+  box-sizing: border-box
+
+// Number
+boxcol(flex = 0)
+  box-flex: flex
+
+boxgroup(group = 1, order = 1)
+  box-flex-group: group
+  box-ordinal-group: order
+
+// start | end | center | justify
+boxpack(pack = center)
+  box-pack: pack
+
+// start | end | center | baseline | stretch
+boxalign(align = center)
+  box-align: align

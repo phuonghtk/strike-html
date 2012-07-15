@@ -1,0 +1,10 @@
+// Font size for mobile
+// Synopsis:
+//  Auto add rem font sizing for mobile
+if mobile-font
+  font-size()
+    if unit(arguments) is 'px'
+      font-size: unit(arguments, 'px')
+      font-size: unit(arguments/10, 'rem')
+    else
+      font-size: arguments

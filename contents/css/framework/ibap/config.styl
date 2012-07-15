@@ -1,0 +1,41 @@
+// Note: All vars are overridable by default
+
+// Universal Helpers.
+// Synopsis:
+//  cool `*` helpers to make life easier
+//  - refer to <http://css-tricks.com/things-it-might-be-funuseful-to-try-the-universal-selector-on/> for ideas
+universal-box      ?= true
+universal-pos      ?= true
+universal-bg       ?= false
+universal-valign   ?= false
+
+// Legacy Support, NoJs.
+// Synopsis:
+//  care about oldie? why? legacy support options for
+//  old ie versions & also nojs fallbacks - part of
+//  me figures the assholes at microsoft long ago decided
+//  they'd stick to their guns instead of just building a webkit
+//  browser of of sheer, sadistic spite
+// Note:
+//  opinionated, assuming conditional <html> classes from
+//  <h5bp.com> and .oldie for IE6/7 instead of separate classes
+legacy          ?= false
+legacy-ie9      ?= false
+legacy-ie8      ?= false
+old-ie          ?= false
+nojs            ?= true
+
+// Mobile specific hacks/optimize
+// Synopsis:
+//   Enable mobile support property goodness
+mobile-font     ?= true
+
+// Miscellania.
+// Synopsis:
+//  other config options and the like for you to enjoy
+
+// Note: Adds .cf class to @extend when true
+extend-clearfix ?= false
+
+// Set img to display: block by default?
+img-block       ?= true

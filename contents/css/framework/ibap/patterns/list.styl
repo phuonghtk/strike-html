@@ -1,0 +1,31 @@
+// Pretty bullet
+// Synopsis
+//  Make a list(ul/ol) have an image bullet.
+bullet($bullet-icon, $padding = 14px, $width = 0, $height = 0, $line-height = 18px)
+  list-style-type: $bullet-icon
+  padding-left: $padding
+  background: url($bullet-icon) no-repeat ($padding - $width) / 2 ($line-height - $height) / 2
+
+hlist($direction, $padding)
+  bullet: none
+  reset-box-model()
+  clearfix()
+  white-space: nowrap
+  if $direction is center
+    text-align: center
+    li
+      reset-box-model()
+      display: inline-block
+  else
+    li
+      float: $direction
+      &:first-child, &.first
+        padding-{$direction}: 0
+      &:last-child
+        padding-{opposite-position($direction)}: 0
+      &.last
+        padding-{opposite-position($direction)}: 0
+  li
+    if $padding
+      padding-left: ($padding/2)
+      padding-right: ($padding/2)

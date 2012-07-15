@@ -1,0 +1,72 @@
+radius()
+  border-radius: arguments
+
+bg()
+  background: arguments
+
+/* Vertical Background Gradient */
+vbg(fc = #FFF, tc = #FFF)
+  background: -webkit-linear-gradient(top, fc, tc)
+
+/* Horizontal Background Gradient */
+hbg(fc = #FFF, tc = #FFF)
+  background: -webkit-linear-gradient(left, fc, tc)
+
+boxsh()
+  box-shadow: arguments
+
+iboxsh()
+  box-shadow: inset arguments
+
+ell()
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space:nowrap
+
+iline(opacity = 0.4, size = 1px)
+  iboxsh(0, size, 0, rgba(255, 255, 255, opacity))
+
+oline(opacity = 0.4, size = 1px)
+  boxsh(0, size, 0, rgba(255, 255, 255, opacity))
+
+tf(tr)
+  transform: tr
+
+tfx(tr)
+  tf: translateX(tr)
+
+tfy(tr)
+  tf: translateY(tr)
+
+tfz(tr)
+  tf: translateZ(tr)
+
+// Enable hacel by default
+tfxy(x, y)
+  tf: translate3d(x, y, 0)
+
+tscale(tr)
+  tf: scale(tr)
+
+tskew(tr)
+  tf: skew(tr)
+
+fx(s = 0.3s, o =  all, t = ease)
+  transition: s o t
+
+hacel()
+  transform(translate3d(0,0,0))
+
+//Supar Lazy
+
+bb()
+  border-bottom arguments
+
+fz()
+  font-size arguments
+
+ff()
+  font-family arguments
+
+mh()
+  min-height arguments

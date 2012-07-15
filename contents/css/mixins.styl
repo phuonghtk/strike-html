@@ -1,0 +1,58 @@
+$darkblue = #09182d
+$lightblue = #0d1d34
+$lighterblue = #364252
+
+@font-face
+  font-family 'Freshman'
+  src url('../font/Freshman.eot')
+  src url('../font/Freshman.eot?#iefix') format('embedded-opentype'),
+       url('../font/Freshman.woff') format('woff'),
+       url('../font/Freshman.ttf') format('truetype'),
+       url('../font/Freshman.svg#Freshman') format('svg')
+  font-weight normal
+  font-style normal
+
+input[type='text'], [role='list'] span:last-child
+  color #fff
+  fz 9px
+  text-align right
+  border 0
+  outline none
+  border-radius 2px
+  bg: #263039;
+  padding: 0 0.025rem
+  box-shadow 0 1px 0 rgba(255,255,255,.3), inset 0 1px 0 rgba(0,0,0,.5)
+
+button, .button
+  fz 9px
+  ff: 'Freshman'
+  color: #3c3e3f
+  border: 0
+
+h3
+  -webkit-text-stroke 1px rgba(0,0,0, .3)
+  -webkit-text-fill-color: #FFFFFF
+  text-shadow 1px 1px 0 rgba(0,0,0, .3), -1px -1px 0 rgba(0,0,0, .3), 1px -1px rgba(0,0,0, .3), -1px 1px 0 rgba(0,0,0, .3), 1px 1px 0 rgba(0,0,0, .3)
+  // -webkit-animation colorchange 1s infinite
+  // -webkit-animation-direction alternate
+
+progress(w=8rem, h=1rem, bgc=#2f3739, bgi=#5482c1, bdc=#e4e4e4, percent=0%)
+  background-color bgc
+  box-shadow inset 2px 4px 3px rgba(0,0,0,.6), 0 0 0 1px bdc
+  border-radius 1px
+  float left
+  overflow hidden
+  height h
+  width w
+
+  div
+    opacity .75
+    background-color #5482c1
+    height 100%
+    width percent
+    box-sizing border-box
+    border 0
+
+
+@import 'color'
+@import 'shortcut'

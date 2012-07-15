@@ -1,0 +1,20 @@
+// Hide All.
+// Synopsis:
+//  Hide from browsers + screenreaders.
+hide-all()
+  display: none
+  visibility: hidden
+
+// Hide Visually.
+// Synopsis:
+//  Hide visually, show for screenreaders.
+hide-readers()
+  position: absolute!important
+  clip: rect(1px 1px 1px 1px) // IE6/7
+  clip: rect(1px, 1px, 1px, 1px)
+
+// Invisibile.
+// Synopsis:
+//  Hide visually, hide from screenreaders, maintain layout
+hide-invisible()
+  visibility: hidden

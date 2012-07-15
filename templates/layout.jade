@@ -1,0 +1,44 @@
+!!! 5
+html(lang='en', class="no-js")
+  head
+    block head
+      meta(charset='utf-8')
+      title
+        !{locals.title} - !{page.title}
+      // Viewport metatags
+      meta(name='HandheldFriendly', content='True')
+      meta(name='MobileOptimized', content='320')
+      meta(name='viewport', content='width=device-width')
+      meta(http-equiv='cleartype', content='on')
+      // iOS webapp metatags
+      meta(name='apple-mobile-web-app-capable', content='yes')
+      meta(name='apple-mobile-web-app-status-bar-style', content='black')
+      style(rel='stylesheet')
+        .no-js{
+          background: #000;
+          min-height: 480px;
+        }
+        .no-js body {
+          opacity: 0
+        }
+      // iOS webapp icons
+      // link(rel='apple-touch-icon', href='touch-icon-iphone.html')
+      // link(rel='apple-touch-icon', sizes='72x72', href='touch-icon-ipad.html')
+      // link(rel='apple-touch-icon', sizes='114x114', href='touch-icon-retina.html')
+      script
+        (function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")
+      block styles
+        link(href='/css/main.css', rel='stylesheet')
+  body
+    header
+      block header
+    section(class="viewport #{page._metadata.class}")
+      block main
+        main
+    footer
+      block footer
+    block javascript
+      // script
+      //   document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+      script(src='js/devtools.js')
+      script(src='js/loader.js')

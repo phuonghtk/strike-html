@@ -1,0 +1,79 @@
+// Float Direct Child.
+// Synopsis:
+//  floats direct child element (wrap with ''), set
+//  direction, optional width; add/extend clearfix() on parent
+// Example:
+//  float-children: '<element>', <left|right>, <width>
+float-children(kid, direction, w = null)
+  bullet: none
+  reset-box-model()
+  if extend-clearfix
+    @extends .cf
+  else
+    clearfix()
+  if kid
+    & > {kid}
+      if direction
+        float: direction
+      if w
+        width: w
+
+// Center Horizontally.
+// Synopsis:
+//  block elements. accepts width value. determines
+//  if margin-{top|bottom} defined to optimize shorthand
+center(w)
+  if @margin-top || @margin-bottom
+    if (@margin-top and !(@margin-bottom))
+      margin: @margin-top auto 0 auto
+    else if (!(@margin-top) and @margin-bottom)
+      margin: 0 auto @margin-bottom auto
+    else
+      margin-left: auto
+      margin-right: auto
+  else
+    margin: 0 auto
+  if w
+    width: w
+
+// Center (Absolute).
+// Synopsis:
+//  requires fixed height/width; absolute position
+//  with negative left + top margins
+center-absolute()
+  absolute: left 50% top 50%
+  margin-left: -(@width / 2)
+  margin-top: -(@height / 2)
+
+// Force Scrollbars.
+// Synopsis:
+//  forces vertical scrollbars for page-to-page consistency
+scrollbars()
+  overflow-y: scroll
+
+mar(x, y = x)
+  if y == x
+    marding y
+  else
+    marding y x y x
+
+mar-x(n)
+  marding-left n
+  marding-right n
+
+mar-y(n)
+  margin-top n
+  margin-bottom n
+
+mar(x, y = x)
+  if y == x
+    margin y
+  else
+    margin y x y x
+
+mar-x(n)
+  margin-left n
+  margin-right n
+
+mar-y(n)
+  margin-top n

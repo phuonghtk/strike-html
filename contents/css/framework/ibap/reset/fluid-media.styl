@@ -1,0 +1,14 @@
+// Fluid Media.
+// Synopsis:
+//  displays images as blocks instead of inline to eliminate
+//  bottom alignment issues; fluid width
+figure
+  img, object, embed, video
+    display: block
+    max-width: 100%
+img
+  if img-block
+    display: block
+  max-width: 100%
+  border: 0
+  -ms-interpolation-mode: bicubic

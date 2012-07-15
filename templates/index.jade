@@ -1,0 +1,27 @@
+extends layout
+
+block header
+block main
+  header
+    button.start
+      span Start
+  article.teams
+    section
+      .header aaa
+      ul
+        li
+          span Experimental
+          input(type='text', value="Super Color")
+        - var colors = ['#f0e6b9', '#b9d1ab', '#a6b882', '#e66965', '#e66247', '#438a9c']
+        - for color, i in colors
+          li
+            span!= color
+            a(class='btn-#{i}', href="#")!= color
+    section
+      .header aaa
+      ul
+        li
+          span Level
+          input(type='text', value="Test")
+
+block footer

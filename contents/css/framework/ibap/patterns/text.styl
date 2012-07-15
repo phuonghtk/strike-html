@@ -1,0 +1,26 @@
+// Font Stacks.
+// Synopsis:
+//  common font family variables
+$georgia    = Georgia, Cambria, 'Times New Roman', Times, serif
+$helvetica  = 'Helvetica Neue', Helvetica, Arial, sans-serif
+$lucida-grande  = 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif
+$monospace  = Consolas, 'Andale Mono', 'Lucida Console', Monaco, monospace
+$verdana    = Verdana, Geneva, sans-serif
+
+// Jusify Text.
+// Synopsis:
+//  adds hyphenation to avoid dirty rivers
+justify()
+  hyphens: auto
+  text-align: justify
+
+// Text Rendering.
+// Synopsis:
+//  improved rendering in webkit + gecko via subpixel-aliasing
+// Ref:
+//  <http://www.aestheticallyloyal.com/public/optimize-legibility/>
+//  <http://files.christophzillgens.com/webkit-font-smoothing.html>
+text-smoothing()
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+

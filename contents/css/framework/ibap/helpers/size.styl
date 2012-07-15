@@ -1,0 +1,14 @@
+// Size Utility.
+// Synopsis:
+//  size [w] [h]
+//  if no height specified, uses [w] to square
+// Examples
+//  size 50px => w: 50px h: 50px
+//  size 50px 120px => w: 50px h: 120px
+size(w = null, h = null)
+  width w
+  if h
+    height h
+  else
+    height w
+

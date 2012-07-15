@@ -1,0 +1,16 @@
+// Legacy hasLayout.
+// Synopsis:
+//  triggers hasLayout in shitty versions of ie
+// Ref:
+//  <http://www.impressivewebs.com/new-haslayout-ie/>
+legacy-haslayout()
+  zoom: 1
+
+// Legacy Inline Blocks IE6/7.
+// Synopsis:
+//  just shoot me now - wrangles inline-block into 'shape'
+legacy-inlineblock(h)
+  legacy-haslayout()
+  *display: inline
+  if h // for stupid ie6 fix if you want it
+    _height: h

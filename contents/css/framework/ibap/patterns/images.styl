@@ -1,0 +1,25 @@
+// Sharpen Image.
+// Synopsis:
+//  sharpen an image if blurry due to upscaling/downscaling
+//  - https://developer.mozilla.org/en/CSS/image-rendering
+image-sharpen()
+  image-rendering: -moz-crisp-edges
+  image-rendering: -webkit-optimize-contrast
+  image-rendering: optimize-contrast
+  -ms-interpolation-mode: nearest-neighbor // IE7+
+
+// Optimize for Quality.
+// Synopsis:
+//  emphasize quality > rendering speed
+//  - https://developer.mozilla.org/en/CSS/image-rendering
+image-quality()
+  image-rendering: optimizeQuality
+  -ms-interpolation-mode: bicubic // IE7+
+
+// Optimize for Speed.
+// Synopsis:
+//  emphasize rendering speed > quality; <video> is a
+//  possible use case
+//  - https://developer.mozilla.org/en/CSS/image-rendering
+image-speed()
+  image-rendering: optimizeSpeed

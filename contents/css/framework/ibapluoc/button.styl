@@ -1,0 +1,91 @@
+btnmaker(bg, diff, c=false, r=0, b3d=false, outline=false)
+
+  h = hue(bg)
+  s = saturation(bg)
+  l = lightness(bg)
+  hl = l + diff
+  ll = l - diff
+  hll = l + diff * 2
+  sll = l - diff * 2
+  low = hsl(h,s,ll)
+  high = hsl(h,s,hl)
+  mid = hsl(h,s,hll)
+  superlow = hsl(h,s,sll)
+
+  alpha = (38 * diff) / 100
+
+  if l > 50
+    unless b3d
+      if c
+        color: c
+      else
+        color: rgba(black, 75%)
+      text-shadow: 0 1px 1px rgba(white, alpha)
+  else
+    unless b3d
+      if c
+        color: c
+      else
+        color: rgba(white, 85%)
+      text-shadow: 0 1px 1px rgba(black, alpha)
+
+  if b3d
+    boxsh:0 1px 0 rgba(255, 255, 255, .5) inset,
+    0 -1px 0 rgba(255, 255, 255, .1) inset,
+    0 b3d 0 hsl(h,s,sll), 0 4px 2px rgba(0, 0, 0, .5)
+    text-shadow:-1px -1px 0 hsl(h,s,ll)
+    color: #fff
+    font-weight: 700
+    text-align: center
+    padding: 0.5rem 1.0rem
+
+  unless outline
+    fx(.2s)
+  unless b3d
+    iboxsh: rgba(255,255,255,0.3) 1px 1px 0
+    padding: 0.7rem 1.5rem
+  radius: r
+  display: block
+  background-color: hsl(h,s,hl)
+  background-image: linear-gradient(top, hsl(h,s,hl), hsl(h,s,ll))
+  background-repeat: repeat-x
+  border-color:low low superlow
+  border-width: 1px
+  border-style: solid
+  text-decoration: none
+
+  &:hover
+    background-image: linear-gradient(top, hsla(h,s,hll,.5), hsla(h,s,ll,.8))
+    unless outline
+      fx(.2s)
+
+  if b3d && outline
+    position: relative
+    margin: b3d + outline
+    &:before
+      pseudo()
+      background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.4))
+      radius: r
+      boxsh: 0 1px 2px rgba(0, 0, 0, .7) inset, 0 1px 0 rgba(255,255,255,.4)
+      absolute: left (0 - outline) right (0 - outline)
+      top: (0 - outline)
+      bottom: (0 - (outline + b3d))
+      z-index: -1
+
+  &:active, &:focus
+    unless outline
+      fx(.2s)
+    if b3d
+      boxsh:0 1px 0 rgba(255, 255, 255, .5) inset,
+      0 -1px 0 rgba(255, 255, 255, .1) inset
+      if outline
+        odif = (outline - b3d)/2
+        top: b3d + odif
+        &:before
+          top: (0 - (outline + b3d + odif))
+          bottom: (0 - (b3d + odif))
+          content: ""
+      else
+        top: b3d + .01
+    else
+      boxsh: inset 0px 0px 6px rgba(black,.5)

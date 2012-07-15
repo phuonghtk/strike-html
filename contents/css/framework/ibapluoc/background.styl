@@ -1,0 +1,19 @@
+bgcaro(linecolor, size, gap, direction, colors...)
+  background-image: -webkit-linear-gradient(direction, linecolor 0%, linecolor 100%-(gap/size*100)%, transparent 100%-(gap/size*100)%),
+    -webkit-linear-gradient(direction+90deg,linecolor 0%, linecolor 100%-(gap/size*100)%, transparent 100%-(gap/size*100)%),
+    -webkit-linear-gradient(top, unquote(join(',', colors)))
+  background-size: size size, size size, cover
+
+bgstripe()
+  if(arguments[1] == null)
+    background-image: url('../img/stripe.png')
+    background-size: image-size('../img/stripe.png'), cover
+  else
+    background-image: url('../img/stripe.png'),
+      -webkit-linear-gradient(top, unquote(join(',', arguments)))
+    background-size: image-size('../img/stripe.png'), cover
+
+imgrep()
+  background: url(arguments) no-repeat
+  background-size: contain
+  height: (image-size(arguments)[1] / 10)rem

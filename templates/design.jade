@@ -1,0 +1,9 @@
+extends layout
+
+block append styles
+  link(rel="stylesheet", href="/css/design.css")
+block footer
+  #info
+    include topnav
+    - var title = 'Day la trang text'
+    mixin topnav

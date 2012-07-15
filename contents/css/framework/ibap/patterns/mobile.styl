@@ -1,0 +1,31 @@
+// Mobile Text.
+// Synopsis.
+//  prevents iOS text-size adjust after orientation change
+//  while maintaining user zoom
+// Ref:
+//  <www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/>
+mobile-text()
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+  text-size-adjust: 100%
+  -webkit-touch-callout: none
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  -webkit-user-select: none
+  -webkit-font-smoothing: antialiased
+
+// Mobile Fixed Text.
+// Synopsis:
+//  prevents iOS safari + windows IE from screwing
+//  with your text (apply to root or body, usually)
+// Note:
+//  be very careful you're screwing (significantly) with people's
+//  expectations with this mixin
+// Ref:
+//  <http://www.456bereastreet.com/archive/201011/beware_of_-webkit-text-size-adjustnone/>
+mobile-fixed-text()
+  -webkit-text-size-adjust: none
+  -ms-text-size-adjust: none
+  -webkit-touch-callout: none
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  -webkit-user-select: none
+  -webkit-font-smoothing: antialiased

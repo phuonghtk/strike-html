@@ -1,0 +1,15 @@
+// Layout helper.
+// Synopsis:
+//  universal border-box to simplify the box model &
+//  position: relative to DRY up code/overriding
+//  where necessesary
+if universal-box || universal-pos || universal-bg || universal-align
+  *
+    if universal-box
+      box-sizing: border-box
+    if universal-pos
+      position: relative
+    if universal-bg
+      background-repeat: no-repeat
+    if universal-valign
+      vertical-align: middle

@@ -1,0 +1,44 @@
+// Links colors helper
+// Synopsis
+//  Set all the colors for a link with one mixin call. Order of arguments is:
+//    1. normal
+//    2. hover
+//    3. active
+//    4. visited
+//    5. focus
+// Ref
+//  <http://compass-style.org/reference/compass/typography/links/link_colors/>
+link-colors($normal, $hover = false, $active = false, $visited = false, $focus = false)
+  color: $normal
+  @if $visited
+    &:visited
+      color: $visited
+  @if $focus
+    &:focus
+      color: $focus
+  @if $hover
+    &:hover
+      color: $hover
+  @if $active
+    &:active
+      color: $active
+
+// Link hover underline shorthand
+// Synopsis
+//  Readd link underline hover
+// Ref
+//  Compass
+link-hover()
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+// Links without style
+// Synopsis
+//  Strip all style from link, best to use with button
+link-nostyle()
+  color: inherit
+  text-decoration: inherit
+  user-select: none
+  &:active, &:focus
+    outline: none

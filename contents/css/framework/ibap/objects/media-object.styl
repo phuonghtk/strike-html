@@ -1,0 +1,16 @@
+// Media Object.
+// Synopsis:
+//  apply to wrapper divs with content element & an object
+//  positioned off to either side i.e. a news feed item
+// Example:
+//  media-object: <object: left|right>, <gutter>, '<object: class/id>', '<content: class/id>'
+// Ref:
+//  <http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/>
+
+media-object(pos, spacing, object, content)
+  {object}
+    float pos
+    if gutter > 0
+      margin-{opposite-position(pos)}: spacing
+  {content}
+    overflow: hidden
